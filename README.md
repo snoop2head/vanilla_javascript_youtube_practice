@@ -110,7 +110,24 @@ npm install express
 
 
 
-Get Request
 
-Post Request
+
+- Get Request, Post Request
+
+```shell
+npm install @babel/node
+npm install @babel/preset-env
+```
+
+- .babelrc is where presets are stored at. 
+
+- babel is transforming the code 
+
+- Run on save using nodemon. Save it on local by putting -D on the end.
+
+```shell
+npm install nodemon -D
+```
+
+
 

@@ -4,7 +4,7 @@
   "description": "vanilla js tutorial to clone youtube website",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon --exec babel-node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +18,12 @@
   },
   "homepage": "https://github.com/snoop2head/vanilla_javascript_youtube_clone#readme",
   "dependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
