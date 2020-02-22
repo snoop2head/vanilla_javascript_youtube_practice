@@ -147,7 +147,7 @@ const handleHome = (req, res) => res.send("Hello from Django");
 const handleProfile = (req, res) => res.send("You are on my profile");
 ```
 
-- Run on save using nodemon. Save it on local by putting -D on the end.
+- Save it on local by putting -D on the end.
 
 ```shell
 npm install nodemon -D
@@ -155,9 +155,10 @@ npm install nodemon -D
 
 [Check Configuration log](https://github.com/snoop2head/vanilla_javascript_youtube_practice/commit/f7d6c1c55af3740b7dab899eeb976fcf80c97862)
 
-- nodemon --exec 
-  babel-node
-  --delay 2
+- We change scripts on [./package.json](./package.json) file to notate the following:
+  - nodemon --exec : using nodemon which serves as "run on save"
+  - babel-node : babel to use ES6, cleaner Javascript
+  - --delay 2: delay 2 seconds or else nodemon and babel will run the same code twice. 
 
 ```json
 "scripts": {
@@ -166,6 +167,23 @@ npm install nodemon -D
   }
 ```
 
+- Javascript is functional programming. We will make function in between user request and server response.
+- For middlewares, we put request, response and next. This is express js theory. 
 
+```javascript
+// middleware
+const betweenHome = (req, res, next) => {
+  console.log("I am in between");
+  next();
+};
 
-- Middleware is something were connection goes to until it finishes
+// "/" as user request route, handleHome is server response of home. betweenHome is middleware
+app.get("/", betweenHome, handleHome);
+```
+
+- middleware is commenced on the lines below only.
+
+```javascript
+app.use(betweenHome);
+```
+
