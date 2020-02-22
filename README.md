@@ -104,24 +104,48 @@ npm install express
 
   
 
-## Security & Other Stuff
+## Configuration 
 
 - [gitignore example](https://github.com/github/gitignore/blob/master/Node.gitignore) is different from that of Python. For example, you shouldn't upload 380+ files of node_modules on GitHub.
 
-
-
-
-
 - Get Request, Post Request
+- .babelrc is where presets are stored at. 
 
 ```shell
 npm install @babel/node
 npm install @babel/preset-env
 ```
 
-- .babelrc is where presets are stored at. 
+- babel is transforming the code into neat format.
 
-- babel is transforming the code 
+Before Babel 
+
+```javascript
+// request is req, and respond is res
+function handleHome(req, res) {
+  // console.log("functional programming rocks");
+  console.log(req);
+  res.send("Hello from home");
+}
+
+function handleProfile(req, res) {
+  res.send("You are on my profile");
+}
+
+// routing with "/"
+app.get("/", handleHome);
+
+app.get("/profile", handleProfile);
+```
+
+After Babel
+
+```javascript
+const handleHome = (req, res) => res.send("Hello from Django");
+
+// arrow function on javascript
+const handleProfile = (req, res) => res.send("You are on my profile");
+```
 
 - Run on save using nodemon. Save it on local by putting -D on the end.
 
@@ -129,5 +153,19 @@ npm install @babel/preset-env
 npm install nodemon -D
 ```
 
+[Check Configuration log](https://github.com/snoop2head/vanilla_javascript_youtube_practice/commit/f7d6c1c55af3740b7dab899eeb976fcf80c97862)
+
+- nodemon --exec 
+  babel-node
+  --delay 2
+
+```json
+"scripts": {
+    "start": "nodemon --exec babel-node index.js --delay 2",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+```
 
 
+
+- Middleware is something were connection goes to until it finishes
