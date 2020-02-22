@@ -8,6 +8,22 @@ function handleListening() {
   console.log(`Listening in port http://localhost:${PORT}`);
 }
 
+// request is req, and respond is res
+function handleHome(req, res) {
+  // console.log("functional programming rocks");
+  console.log(req);
+  res.send("Hello from home");
+}
+
+function handleProfile(req, res) {
+  res.send("You are on my profile");
+}
+
+// routing with "/"
+app.get("/", handleHome);
+
+app.get("/profile", handleProfile);
+
 // establishing server at port number 4000
 app.listen(4000, handleListening);
 
