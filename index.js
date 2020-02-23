@@ -29,7 +29,7 @@ app.use(morgan("dev"));
 
 // middleware: cookie parser and body parser
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: True }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 /*
 // middleware that stops the process.

@@ -147,6 +147,7 @@ const handleHome = (req, res) => res.send("Hello from Django");
 const handleProfile = (req, res) => res.send("You are on my profile");
 ```
 
+- create [.babelrc](/.babelrc) in the project folder
 - Save it on local by putting -D on the end.
 
 ```shell
