@@ -11,9 +11,9 @@
 
 - However, this project will make YouTube more like website, not as interactive as it is.
 
+## 
 
-
-## Node.js
+# 1. Node Js
 
 - Javascript was orignially only for the browser
 
@@ -44,7 +44,7 @@
   node -v
   ```
 
-## Express.js
+# 2 ExpressJS
 
 - Django(Python), Lalavel(PHP), Express(JavaScript) accomplish the same thing. They make server. 
 
@@ -186,4 +186,58 @@ app.get("/", betweenHome, handleHome);
 ```javascript
 app.use(betweenHome);
 ```
+
+- [For example, morgan is middleware that checks logging time](https://www.npmjs.com/package/morgan)
+- [Helmet is another middleware for securty](https://www.npmjs.com/package/helmet)
+- [cookie-parser](https://www.npmjs.com/package/cookie-parser)
+- [Body-parser](https://www.npmjs.com/package/body-parser)
+
+```shell
+npm install morgan
+npm install helmet
+npm install cookie-parser
+npm install body-parser
+```
+
+
+
+# 3 MongoDB
+
+
+
+# 4 Webpack
+
+
+
+
+
+# 5 Styling
+
+
+
+# 6 User Authentication
+
+
+
+# 7 Relationships and Route
+
+
+
+# 8 Custom Video Player
+
+
+
+# 9 Recording Video with JavaScript
+
+
+
+# 10 API + AJAX
+
+
+
+# 11 AWS, Blob, MongoLab, Heroku
+
+
+
+
 

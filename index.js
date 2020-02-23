@@ -1,5 +1,9 @@
 // reference: https://expressjs.com/en/guide/routing.html
 import express from "express";
+import morgan from "morgan";
+import helmet from "helmet";
+import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
 
 var app = express();
 
@@ -16,6 +20,24 @@ const handleHome = (req, res) => res.send("Hello from Django");
 // last function that returns somthing to user
 // arrow function on javascript
 const handleProfile = (req, res) => res.send("You are on my profile");
+
+// middleware: helmet is for security
+app.use(helmet());
+
+// middleware: morgan is "tiny", "common", "dev" marks time
+app.use(morgan("dev"));
+
+// middleware: cookie parser and body parser
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: True }));
+
+/*
+// middleware that stops the process.
+const middleware = (req, res, next) => {
+  res.send("not happening");
+  // next(); is missing, unlike betweenhome.
+};
+*/
 
 // routing with "/"
 // middleware is in between user request and handleHome.
