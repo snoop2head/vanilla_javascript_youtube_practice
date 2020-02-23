@@ -5,13 +5,10 @@ import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 
-var app = express();
+// importing function, which is not exported as default
+import { userRouter } from "./router";
 
-const PORT = 4000;
-
-// console logging that server is operating
-const handleListening = () =>
-  console.log(`Listening in port http://localhost:${PORT}`);
+const app = express();
 
 // last function that returns somthing to user
 // request is req, and respond is res
@@ -21,15 +18,16 @@ const handleHome = (req, res) => res.send("Hello from Django");
 // arrow function on javascript
 const handleProfile = (req, res) => res.send("You are on my profile");
 
+// middleware: cookie parser and body parser
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // middleware: helmet is for security
 app.use(helmet());
 
 // middleware: morgan is "tiny", "common", "dev" marks time
 app.use(morgan("dev"));
-
-// middleware: cookie parser and body parser
-app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 /*
 // middleware that stops the process.
@@ -37,7 +35,7 @@ const middleware = (req, res, next) => {
   res.send("not happening");
   // next(); is missing, unlike betweenhome.
 };
-*/
+
 
 // routing with "/"
 // middleware is in between user request and handleHome.
@@ -47,19 +45,20 @@ const betweenHome = (req, res, next) => {
   console.log("I am in between");
   next();
 };
+*/
 
-app.get("/", betweenHome, handleHome);
-
-// middleware is commenced on the lines below
-// order of putting middleware matters
-app.use(betweenHome);
-
+app.get("/", handleHome);
 app.get("/profile", handleProfile);
 
-// establishing server at port number 4000
-app.listen(4000, handleListening);
+// using routers
+app.use("/user", userRouter);
 
+/*
 // respond with "hello world" when a GET request is made to the homepage
 app.get("/", function(req, res) {
   res.send("hello world");
 });
+*/
+
+// exporting as default app
+export default app;

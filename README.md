@@ -114,6 +114,7 @@ npm install express
 ```shell
 npm install @babel/node
 npm install @babel/preset-env
+npm install @babel/core
 ```
 
 - babel is transforming the code into neat format.
@@ -182,7 +183,7 @@ const betweenHome = (req, res, next) => {
 app.get("/", betweenHome, handleHome);
 ```
 
-- middleware is commenced on the lines below only.
+- middleware is commenced on the lines below only. order of putting middleware matters
 
 ```javascript
 app.use(betweenHome);

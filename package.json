@@ -2,9 +2,9 @@
   "name": "vanilla_javascript_youtube_clone",
   "version": "1.0.0",
   "description": "vanilla js tutorial to clone youtube website",
-  "main": "index.js",
+  "main": "init.js",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js --delay 2",
+    "start": "nodemon --exec babel-node init.js --delay 2",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
