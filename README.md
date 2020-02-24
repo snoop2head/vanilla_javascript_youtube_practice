@@ -228,6 +228,8 @@ npm install body-parser
   function something = () => true
   ```
 
+- flow: routes.js + userController.js -> userRouter.js
+
 ## Directory Structure
 
 - [app.js: imported express, executed express app and added middlewares.](./app.js)
@@ -253,7 +255,19 @@ npm install body-parser
 
 - now we are not sending text via controller, but instead rendering pug template [in userController and in videoRouter.](./controllers)
 
-- 
+- Just like Python, if something is inside, we just indent stuff.  Indented next line is child of the preceding element. 
+
+- If something is on the next line, then it means it is right next to the element on the same level. 
+
+- Create templates on the ./views/layouts/main.pug
+
+- Copy and pasting stuffs by "extending" the main template.
+
+```
+extends layouts/main
+```
+
+
 
 # 3 MongoDB
 

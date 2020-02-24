@@ -1,5 +1,6 @@
 import express from "express";
 
+// importing routers from routes.js
 // routing localhost:4000/
 import routes from "../routes";
 

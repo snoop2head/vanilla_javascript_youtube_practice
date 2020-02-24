@@ -1,5 +1,6 @@
 import express from "express";
 
+// importing routers from routes.js
 import routes from "../routes";
 import {
   // videos,

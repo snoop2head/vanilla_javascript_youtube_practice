@@ -1,6 +1,7 @@
-// routing localhost:4000/{}
-
 import express from "express";
+
+// importing routers from routes.js
+// routing localhost:4000/{}
 import routes from "../routes"; //.. means outside of directory
 import { home, search } from "../controllers/videocontroller"; // imported functions from controllers
 import { join, login, logout } from "../controllers/usercontroller"; // imported functions from controllers
