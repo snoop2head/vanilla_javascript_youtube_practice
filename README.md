@@ -208,6 +208,28 @@ npm install body-parser
 - Routers only take care of urls
   - [Dividing video, global, user in order to separte urls](./routers)
 
+- controllers are logics. 
+
+- So far we only have two functions: users and videos
+
+- arrow function implicitly contains "return"
+
+  Ugly JavaScript
+
+  ```javascript
+  function something () {
+    return true
+  }
+  ```
+
+  Arrow JavaScript (ES6)
+
+  ```js
+  function something = () => true
+  ```
+
+- 
+
 # 3 MongoDB
 
 

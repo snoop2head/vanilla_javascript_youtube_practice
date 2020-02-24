@@ -1,13 +1,14 @@
 import express from "express";
+import routes from "../routes";
 
 // exporting userRouter function inside of project folder
 export const userRouter = express.Router();
 
-/*
-// making anonymous function inside of router, instead of calling function
-userRouter.get("/", (req, res) => res.send("user index")); //index of router
-userRouter.get("/edit", (req, res) => res.send("user edit"));
-userRouter.get("/password", (req, res) => res.send("user password"));
-*/
+userRouter.get(routes.users, (req, res) => res.send("Users"));
+userRouter.get(routes.userDetail, (req, res) => res.send("User Detail"));
+userRouter.get(routes.editProfile, (req, res) => res.send("Edit Profile"));
+userRouter.get(routes.changePassword, (req, res) =>
+  res.send("Change Password")
+);
 
 export default userRouter;
