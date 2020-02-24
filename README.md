@@ -228,7 +228,20 @@ npm install body-parser
   function something = () => true
   ```
 
-- 
+## Directory Structure
+
+- [app.js: imported express, executed express app and added middlewares.](./app.js)
+  - bodyparser: getting requests in forms of json or url from users
+  - helmet: security 
+  - morgan: logging applications defined above
+- [Init.js: import from application](./init.js)
+- globalRouter.js: routing localhost:4000/{}
+- userRouter.js: routing localhost:4000/users/{}
+- videoRouter.js: routing localhost:4000/videos/{}
+- routes.js: cramming all routes in one file
+- userController.js, videoController.js: functions that responds to requests
+
+
 
 # 3 MongoDB
 
