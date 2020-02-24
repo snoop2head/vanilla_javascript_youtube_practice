@@ -4,19 +4,21 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-
 // importing function, which is not exported as default
-import { userRouter } from "./router";
-
+import userRouter from "./routers/userRouter";
+import videoRouter from "./routers/videoRouter";
+import globalRouter from "./routers/globalRouter";
 const app = express();
 
+/*
 // last function that returns somthing to user
 // request is req, and respond is res
-const handleHome = (req, res) => res.send("Hello from Django");
+const handleHome = (req, res) => res.send("Hello fsrom Django");
 
 // last function that returns somthing to user
 // arrow function on javascript
 const handleProfile = (req, res) => res.send("You are on my profile");
+*/
 
 // middleware: cookie parser and body parser
 app.use(cookieParser());
@@ -47,11 +49,10 @@ const betweenHome = (req, res, next) => {
 };
 */
 
-app.get("/", handleHome);
-app.get("/profile", handleProfile);
-
 // using routers
+app.use("/", globalRouter);
 app.use("/user", userRouter);
+app.use("/video", videoRouter);
 
 /*
 // respond with "hello world" when a GET request is made to the homepage

@@ -201,7 +201,12 @@ npm install cookie-parser
 npm install body-parser
 ```
 
-
+- MVC is a pattern
+  - M: data
+  - V: how does data look
+  - C: function that looks for data. In this case, userRouter.
+- Routers only take care of urls
+  - [Dividing video, global, user in order to separte urls](./routers)
 
 # 3 MongoDB
 
