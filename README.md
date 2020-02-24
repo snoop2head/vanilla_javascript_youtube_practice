@@ -206,8 +206,9 @@ npm install body-parser
   - View: how does data look (like views in Django)
   - Controllers: function that looks for data. In this case, userRouter.
 - Routers only take care of urls
-  - [Dividing video, global, user in order to separte urls](./routers)
-
+  
+- [Dividing video, global, user in order to separte urls](./routers)
+  
 - controllers are logics. 
 
 - So far we only have two functions: users and videos
@@ -272,6 +273,14 @@ extends layouts/main
   ```
 
   It means import pug template in outside of directory, partials/header.pug
+
+- imagine 
+
+  ```
+  block content
+  ```
+
+  as windows for the contents to be filled in
 
 - Adding Fontawesome between head and body
 
