@@ -1,3 +1,4 @@
+// controlling rendering
 // exporting and sends function to globalRouter.js
 export const join = (req, res) => res.render("join");
 export const login = (req, res) => res.render("login");
