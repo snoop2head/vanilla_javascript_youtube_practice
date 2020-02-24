@@ -1,3 +1,5 @@
+// routing localhost:4000/{}
+
 import express from "express";
 import routes from "../routes"; //.. is outside of directory
 import { home, search } from "../controllers/videocontroller"; // imported functions from controllers

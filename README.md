@@ -202,9 +202,9 @@ npm install body-parser
 ```
 
 - MVC is a pattern
-  - M: data
-  - V: how does data look
-  - C: function that looks for data. In this case, userRouter.
+  - Model: data (like models.py in Django)
+  - View: how does data look (like views in Django)
+  - Controllers: function that looks for data. In this case, userRouter.
 - Routers only take care of urls
   - [Dividing video, global, user in order to separte urls](./routers)
 
