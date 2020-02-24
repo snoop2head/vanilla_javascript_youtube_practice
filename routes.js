@@ -1,3 +1,5 @@
+// flow: routes.js + userController.js -> userRouter.js
+
 // designating global url
 const HOME = "/";
 const JOIN = "/join";
