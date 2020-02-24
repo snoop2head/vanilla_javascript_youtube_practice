@@ -267,7 +267,30 @@ npm install body-parser
 extends layouts/main
 ```
 
+- ```
+  include ../partials/header
+  ```
 
+  It means import pug template in outside of directory, partials/header.pug
+
+- Adding Fontawesome between head and body
+
+  ```
+  head
+  	title Myam and Noop
+  	script(src="https://kit.fontawesome.com/5b9f0f6c73.js", crossorigin="anonymous")
+  body
+  ```
+
+- Switch between text and JavaScript in pug like
+
+  ```
+  #{new Date().getFullYear()}
+  ```
+
+- list is li, anchor is a for HTML
+
+- Change one thing that affects many same things, if possible.
 
 # 3 MongoDB
 
