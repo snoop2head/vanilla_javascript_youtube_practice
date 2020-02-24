@@ -241,7 +241,19 @@ npm install body-parser
 - routes.js: cramming all routes in one file
 - userController.js, videoController.js: functions that responds to requests
 
+## pug
 
+- [Pug is view engine for express, which makes HTML pretty. Thus, in the express js document, find set up for view engine.](https://expressjs.com/en/api.html#app.set)
+
+  ```js
+  app.set("view engine", "pug");
+  ```
+
+- [home.pug is template where you can easily write html](./views/home.pug)
+
+- now we are not sending text via controller, but instead rendering pug template [in userController and in videoRouter.](./controllers)
+
+- 
 
 # 3 MongoDB
 

@@ -2,7 +2,7 @@ import express from "express";
 
 import routes from "../routes";
 import {
-  videos,
+  // videos,
   upload,
   videoDetail,
   editVideo,
@@ -10,10 +10,9 @@ import {
 } from "../controllers/videoController";
 // exporting videoRouter function inside of project folder
 
+// routing for /videos/{id} if there were to use id defined in routes.js
+// refer to routes.js where routes are defined
 const videoRouter = express.Router();
-
-// routing for /videos/videos.
-videoRouter.get(routes.videos, videos);
 
 // refer to routes.js
 // routing for ./upload

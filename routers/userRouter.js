@@ -5,16 +5,15 @@ import routes from "../routes";
 
 // importing functions from userController inside of project folder
 import {
-  users,
+  // users,
   userDetail,
   editProfile,
   changePassword
 } from "../controllers/usercontroller";
 
+// routing for /users/{id} if there were to use id defined in routes.js
+// refer to routes.js where routes are defined
 const userRouter = express.Router();
-
-// routing for /users/users.
-userRouter.get(routes.users, users);
 
 // under here will bee /users/.
 // routing for ./edit-profile
