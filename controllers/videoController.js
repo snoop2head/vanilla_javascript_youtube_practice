@@ -4,8 +4,15 @@
 // function response for http://localhost:4000/home
 export const home = (req, res) => res.render("home", { pageTitle: "Home" }); // looking for template in the project named "home"
 // function response for http://localhost:4000/search
-export const search = (req, res) =>
-  res.render("search", { pageTitle: "Search" });
+export const search = (req, res) => {
+  // returns query into json format
+  // console.log(req.query);
+  // searchingBy equals to req.query.term
+  const {
+    query: { term: searchingBy },
+  } = req;
+  res.render("search", { pageTitle: "Search", searchingBy });
+};
 
 // exporting and renders function to videoRouter.js
 // function response for http://localhost:4000/videos/upload

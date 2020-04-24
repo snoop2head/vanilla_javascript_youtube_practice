@@ -301,6 +301,8 @@ extends layouts/main
 
 - Change one thing that affects many same things, if possible.
 
+- Partials allow us to re-use blocks of HTML
+
 # 3 MongoDB
 
 
