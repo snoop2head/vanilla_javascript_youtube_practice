@@ -252,27 +252,32 @@ npm install body-parser
   app.set("view engine", "pug");
   ```
 
+- following code is the same 
+
+```html
+<i class="fab fa-github"></i>
+```
+
+```pug
+i.fab.fa-github
+```
+
 - [home.pug is template where you can easily write html](./views/home.pug)
-
 - now we are not sending text via controller, but instead rendering pug template [in userController and in videoRouter.](./controllers)
-
 - Just like Python, if something is inside, we just indent stuff.  Indented next line is child of the preceding element. 
-
 - If something is on the next line, then it means it is right next to the element on the same level. 
-
 - Create templates on the ./views/layouts/main.pug
-
-- Copy and pasting stuffs by "extending" the main template.
+- "extending" to the main template: corresponding file is attached with the main.pug
 
 ```
 extends layouts/main
 ```
 
-- ```
-  include ../partials/header
-  ```
+* "including" pug template outside of directory, partials/header.pug to the corresponding file
 
-  It means import pug template in outside of directory, partials/header.pug
+```
+include ../partials/header
+```
 
 - imagine 
 
@@ -302,6 +307,10 @@ extends layouts/main
 - Change one thing that affects many same things, if possible.
 
 - Partials allow us to re-use blocks of HTML
+
+
+
+
 
 # 3 MongoDB
 
