@@ -9,7 +9,7 @@ import {
   // users,
   userDetail,
   editProfile,
-  changePassword
+  changePassword,
 } from "../controllers/usercontroller";
 
 // routing for /users/{id} if there were to use id defined in routes.js

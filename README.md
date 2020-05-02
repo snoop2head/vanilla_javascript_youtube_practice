@@ -291,7 +291,7 @@ include ../partials/header
 
   ```
   head
-  	title Myam and Noop
+  	title Noop
   	script(src="https://kit.fontawesome.com/5b9f0f6c73.js", crossorigin="anonymous")
   body
   ```
@@ -307,6 +307,29 @@ include ../partials/header
 - Change one thing that affects many same things, if possible.
 
 - Partials allow us to re-use blocks of HTML
+
+- Inside of templates, routes are connected to routes.js
+
+```pug
+//- editProfile.pug
+extends layouts/main
+
+block content
+    .form__container
+        form(action=routes.editProfile, method="post")
+```
+
+```javascript
+const EDIT_PROFILE = "/edit-profile";
+...
+const routes = {
+  ...
+	editProfile: EDIT_PROFILE,
+  ...
+};
+```
+
+
 
 
 
