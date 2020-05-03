@@ -11,8 +11,6 @@
 
 - However, this project will make YouTube more like website, not as interactive as it is.
 
-## 
-
 # 1. Node Js
 
 - Javascript was orignially only for the browser
@@ -244,7 +242,7 @@ npm install body-parser
 - routes.js: cramming all routes in one file
 - userController.js, videoController.js: functions that responds to requests
 
-## pug
+## Connecting pug template to the server
 
 - [Pug is view engine for express, which makes HTML pretty. Thus, in the express js document, find set up for view engine.](https://expressjs.com/en/api.html#app.set)
 
@@ -263,9 +261,9 @@ i.fab.fa-github
 ```
 
 - [home.pug is template where you can easily write html](./views/home.pug)
+  - Just like Python, if something is inside, we just indent stuff.  Indented next line is child of the preceding element. 
+  - If something is on the next line, then it means it is right next to the element on the same level. 
 - now we are not sending text via controller, but instead rendering pug template [in userController and in videoRouter.](./controllers)
-- Just like Python, if something is inside, we just indent stuff.  Indented next line is child of the preceding element. 
-- If something is on the next line, then it means it is right next to the element on the same level. 
 - Create templates on the ./views/layouts/main.pug
 - "extending" to the main template: corresponding file is attached with the main.pug
 
@@ -281,20 +279,20 @@ include ../partials/header
 
 - imagine 
 
-  ```
-  block content
-  ```
+```
+block content
+```
 
-  as windows for the contents to be filled in
+as windows for the contents to be filled in
 
 - Adding Fontawesome between head and body
 
-  ```
-  head
-  	title Noop
-  	script(src="https://kit.fontawesome.com/5b9f0f6c73.js", crossorigin="anonymous")
-  body
-  ```
+```
+head
+	title Noop
+	script(src="https://kit.fontawesome.com/5b9f0f6c73.js", crossorigin="anonymous")
+body
+```
 
 - Switch between text and JavaScript in pug like
 
@@ -308,7 +306,7 @@ include ../partials/header
 
 - Partials allow us to re-use blocks of HTML
 
-- Inside of templates, routes are connected to routes.js
+- Inside of templates, routes are connected to routes.js. For example, the editProfile pug template is connected via routes.js
 
 ```pug
 //- editProfile.pug

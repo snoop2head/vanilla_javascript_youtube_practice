@@ -1,8 +1,12 @@
-// controlling rendering
+// controls video rendering
+
+// import data from sample database
+import { videos } from "../sampledb";
 
 // exporting and sends function to globalRouter.js
 // function response for http://localhost:4000/home
-export const home = (req, res) => res.render("home", { pageTitle: "Home" }); // looking for template in the project named "home"
+export const home = (req, res) =>
+  res.render("home", { pageTitle: "Home", videos }); // looking for template in the project named "home"
 // function response for http://localhost:4000/search
 export const search = (req, res) => {
   // returns query into json format
