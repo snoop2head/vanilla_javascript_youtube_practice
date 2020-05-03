@@ -1,3 +1,5 @@
+// Utilizing middlewares as app
+// Routers are also middlewares, but separated in ./routers folder
 // reference: https://expressjs.com/en/guide/routing.html
 import express from "express";
 import morgan from "morgan";

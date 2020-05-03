@@ -250,7 +250,32 @@ npm install body-parser
   app.set("view engine", "pug");
   ```
 
-- following code is the same 
+- Characteristics of pug.js are
+
+  - [home.pug is template where you can easily write html](./views/home.pug) 
+    - Just like Python, if something is inside, we just indent stuff.  Indented next line is child of the preceding element. 
+    - If something is on the next line, then it means it is right next to the element on the same level. 
+  - rendering variables on template
+  - if statement, for statement
+  - "extending" to the main template: corresponding file is attached with the main.pug
+
+  ```
+  extends layouts/main
+  ```
+
+  * "including" pug template outside of directory, partials/header.pug to the corresponding file
+
+  ```
+  include ../partials/header
+  ```
+
+  - "block" as a window for the contents to be filled in
+
+  ```
+  block content
+  ```
+
+- Following HTML codes can be written as pug.js as following:
 
 ```html
 <i class="fab fa-github"></i>
@@ -260,30 +285,7 @@ npm install body-parser
 i.fab.fa-github
 ```
 
-- [home.pug is template where you can easily write html](./views/home.pug)
-  - Just like Python, if something is inside, we just indent stuff.  Indented next line is child of the preceding element. 
-  - If something is on the next line, then it means it is right next to the element on the same level. 
 - now we are not sending text via controller, but instead rendering pug template [in userController and in videoRouter.](./controllers)
-- Create templates on the ./views/layouts/main.pug
-- "extending" to the main template: corresponding file is attached with the main.pug
-
-```
-extends layouts/main
-```
-
-* "including" pug template outside of directory, partials/header.pug to the corresponding file
-
-```
-include ../partials/header
-```
-
-- imagine 
-
-```
-block content
-```
-
-as windows for the contents to be filled in
 
 - Adding Fontawesome between head and body
 
