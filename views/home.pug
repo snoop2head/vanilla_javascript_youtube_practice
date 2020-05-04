@@ -1,8 +1,13 @@
 extends layouts/main
+include mixins/videoBlock
 
 block content
     .videos
-        h1 Video
+        //- getting item from video database
         each item in videos
-            h1= item.title
-            p= item.description 
+            //- inputting data to videoBlock mixin in order to yield html
+            +videoBlock({
+                title:item.title,
+                views:item.views,
+                videoURL:item.videoURL
+            }) 

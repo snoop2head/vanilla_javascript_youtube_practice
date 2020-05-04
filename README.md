@@ -329,7 +329,9 @@ const routes = {
 };
 ```
 
-
+* Mixins are functions to be reused in other templates, just like partials
+  * Different data for same HTML structure
+  * Just like mixins are used in styles.scss like function, so is mixins for pug
 
 
 
