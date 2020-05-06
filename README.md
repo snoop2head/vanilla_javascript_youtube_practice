@@ -242,7 +242,33 @@ npm install body-parser
 - routes.js: cramming all routes in one file
 - userController.js, videoController.js: functions that responds to requests
 
-## Connecting pug template to the server
+## User CRUD Controller & Video CRUD Controller
+
+* Controller is basically javascript function that works underneath website
+* Making basic CRUD functions for user and video
+
+### [User CRUD Controller](./controllers/userController.js)
+
+* getJoin
+* afterJoin
+* getLogin
+* afterLogin
+* logout
+* editProfile
+* changePassword
+* userDetail
+
+### [Video CRUD Controller](./controllers/videoController.js)
+
+* home
+* search
+* getUpload
+* afterUpload
+* videoDetail
+* editVideo
+* deleteVideo
+
+## Connecting pug template to the controllers
 
 - [Pug is view engine for express, which makes HTML pretty. Thus, in the express js document, find set up for view engine.](https://expressjs.com/en/api.html#app.set)
 
@@ -332,6 +358,8 @@ const routes = {
 * Mixins are functions to be reused in other templates, just like partials
   * Different data for same HTML structure
   * Just like mixins are used in styles.scss like function, so is mixins for pug
+
+## 
 
 
 
