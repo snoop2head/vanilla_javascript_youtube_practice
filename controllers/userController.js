@@ -1,6 +1,22 @@
-// controlling rendering
-// exporting and sends function to globalRouter.js
-export const join = (req, res) => res.render("join");
+import routes from "../routes";
+
+// functions that control rendering
+// exporting user related function to globalRouter.js
+
+export const getJoin = (req, res) => {
+  res.render("join", { pageTitle: "Join" });
+};
+export const afterJoin = (req, res) => {
+  const {
+    body: { name, email, password, confirmPassword },
+  } = req;
+  if (password !== confirmPassword) {
+    res.status(400);
+    res.render("join", { pageTitle: "Join" });
+  } else {
+    res.redirect(routes.home);
+  }
+};
 export const login = (req, res) => res.render("login");
 export const logout = (req, res) => res.render("logout");
 
