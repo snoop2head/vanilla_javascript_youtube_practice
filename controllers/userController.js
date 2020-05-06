@@ -1,8 +1,8 @@
 import routes from "../routes";
 
+// join controller
 // functions that control rendering
 // exporting user related function to globalRouter.js
-
 export const getJoin = (req, res) => {
   res.render("join", { pageTitle: "Join" });
 };
@@ -17,12 +17,18 @@ export const afterJoin = (req, res) => {
     res.redirect(routes.home);
   }
 };
+
+// login controller
 export const getLogin = (req, res) =>
   res.render("login", { pageTitle: "Log In" });
 export const afterLogin = (req, res) => {
   res.redirect(routes.home);
 };
-export const logout = (req, res) => res.render("logout");
+
+// logout controller
+export const logout = (req, res) => {
+  res.redirect(routes.home);
+};
 
 // function response for http://localhost:4000/users/edit-profile
 export const editProfile = (req, res) => res.render("editProfile");
