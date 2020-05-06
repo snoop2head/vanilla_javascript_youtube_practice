@@ -1,5 +1,6 @@
-// controls video rendering
+import routes from "../routes";
 
+// controls video rendering
 // import data from sample database
 import { videos } from "../sampledb";
 
@@ -20,8 +21,16 @@ export const search = (req, res) => {
 
 // exporting and renders function to videoRouter.js
 // function response for http://localhost:4000/videos/upload
-export const upload = (req, res) =>
+export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
+
+export const afterUpload = (req, res) => {
+  const {
+    body: { file, title, description },
+  } = req;
+  res.redirect(routes.videoDetail(121212));
+};
+
 // function response for http://localhost:4000/videos/id/video-detail
 export const videoDetail = (req, res) =>
   res.render("videoDetail", { pageTitle: "Video Detail" });
