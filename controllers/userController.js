@@ -17,7 +17,11 @@ export const afterJoin = (req, res) => {
     res.redirect(routes.home);
   }
 };
-export const login = (req, res) => res.render("login");
+export const getLogin = (req, res) =>
+  res.render("login", { pageTitle: "Log In" });
+export const afterLogin = (req, res) => {
+  res.redirect(routes.home);
+};
 export const logout = (req, res) => res.render("logout");
 
 // function response for http://localhost:4000/users/edit-profile

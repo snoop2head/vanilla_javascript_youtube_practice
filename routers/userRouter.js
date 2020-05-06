@@ -22,7 +22,7 @@ userRouter.get(routes.editProfile, editProfile);
 // routing for ./change-password
 userRouter.get(routes.changePassword, changePassword);
 // routing for ./user-detail
-userRouter.get(routes.userDetail, userDetail);
+userRouter.get(routes.userDetail(), userDetail);
 
 export default userRouter;
 
