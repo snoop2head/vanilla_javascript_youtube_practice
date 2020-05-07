@@ -2,7 +2,7 @@ import routes from "../routes";
 
 // controls video rendering
 // import data from sample database
-import { videos } from "../sampledb";
+// import { videos } from "../sampledb";
 
 // exporting and sends function to globalRouter.js
 // function response for http://localhost:4000/home

@@ -236,7 +236,7 @@ npm install body-parser
   - bodyparser: getting requests in forms of json or url from users
   - helmet: security 
   - morgan: logging applications defined above
-- [Init.js: imports from application](./init.js)
+- [Init.js: imports all the applications in app.js and imports database ODM](./init.js)
 - routes.js: cramming all routes in one file
 
 ## Rendering templates with CRUD Controllers
@@ -392,6 +392,7 @@ fooRouter.get(URL, controller);
   * [MongoDB Source for Installation](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
   * [Installation Guide (Max OS)](https://zellwk.com/blog/install-mongodb/)
 * Mongoose is ODM, like pymongo
+* dotenv (.env) module can be used to hide sensitive information
 
 # 4. Webpack
 
@@ -424,6 +425,12 @@ fooRouter.get(URL, controller);
 
 
 # 11 AWS, Blob, MongoLab, Heroku
+
+
+
+# 12. Side Notes
+
+* Unlike python, javascript doesn't write which extension it imports. Python writes "foo_app.py" or "foo.html" on code. But in js, it just writes "fooApp" or "foo"
 
 
 
