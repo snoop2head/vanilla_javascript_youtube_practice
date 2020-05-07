@@ -1,19 +1,19 @@
 // flow: routes.js + userController.js -> userRouter.js
 
-// designating global url
+// designating global url: http://localhost:4000/home
 const HOME = "/";
 const JOIN = "/join";
 const LOGIN = "/login";
 const LOGOUT = "/logout";
 const SEARCH = "/search";
 
-// designating Users related url
+// designating Users related url: localhost:4000/users/{}
 const USERS = "/users";
 const USER_DETAIL = "/:id"; // : is for value that changes. id = 1, 2, 3 ... integers.
 const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 
-// designating Videos related url
+// designating Videos related url: localhost:4000/videos/{}
 const VIDEOS = "/videos";
 const UPLOAD = "/upload";
 const VIDEO_DETAIL = "/:id";
