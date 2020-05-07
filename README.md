@@ -243,12 +243,11 @@ npm install body-parser
 
 * Controller is javascript function that responds to requests.
 * A controller's job is to get the data and render the template(pug).
+* We will make basic CRUD controllers for user and video
 
 ```javascript
 res.render("templateName", {key:"value", stuff1, stuff2})
 ```
-
-* We will make basic CRUD controllers for user and video
 
 ### [User CRUD Controller](./controllers/userController.js)
 
@@ -271,7 +270,7 @@ res.render("templateName", {key:"value", stuff1, stuff2})
 * editVideo
 * deleteVideo
 
-## Making pug template
+## Making template with pug
 
 - [Pug is view engine for express, which makes HTML pretty. Thus, in the express js document, find set up for view engine.](https://expressjs.com/en/api.html#app.set)
 
@@ -362,9 +361,16 @@ const routes = {
   * Different data for same HTML structure
   * Just like mixins are used in styles.scss like function, so is mixins for pug
 
-## Connecting controllers with routers
+## Routing controllers with URL
 
-* A router is in charge of mapping URLS with Controller Functions
+* A router is in charge of connecting(or mapping) URLS with Controller Functions
+
+```javascript
+import {controller} from "./controllers/fooController"
+const fooRouter = express.Router();
+
+fooRouter.get(URL, controller);
+```
 
 ### Routers
 
@@ -385,7 +391,7 @@ const routes = {
 * MongoDB is database
   * [MongoDB Source for Installation](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
   * [Installation Guide (Max OS)](https://zellwk.com/blog/install-mongodb/)
-* 
+* Mongoose is ODM, like pymongo
 
 # 4. Webpack
 
