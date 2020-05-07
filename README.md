@@ -42,7 +42,9 @@
   node -v
   ```
 
-# 2 ExpressJS
+# 2. ExpressJS
+
+## Making server with Express
 
 - Django(Python), Lalavel(PHP), Express(JavaScript) accomplish the same thing. They make server. 
 
@@ -59,7 +61,7 @@
   app.listen(3000)
   ```
 
-## Node Package Manager: NPM
+### Node Package Manager: NPM
 
 - Everybody in Node.js world puts their packages in NPM. Like Pip (or conda) of python3.
 - React.js, Express.js, electron.js are all in NPM. 
@@ -75,7 +77,7 @@ npm init
 npm install express
 ```
 
-## Running Server with Express
+### Running Server with Express
 
 - index.js is server
 
@@ -100,9 +102,8 @@ npm install express
   npm start
   ```
 
-  
 
-## Configuration 
+### Express Configuration 
 
 - [gitignore example](https://github.com/github/gitignore/blob/master/Node.gitignore) is different from that of Python. For example, you shouldn't upload 380+ files of node_modules on GitHub.
 
@@ -229,23 +230,25 @@ npm install body-parser
 
 - flow: routes.js + userController.js -> userRouter.js
 
-## Directory Structure
+## Project Files
 
-- [app.js: imported express, executed express app and added middlewares.](./app.js)
+- [app.js: imports express, executed express app, middlewares.](./app.js)
   - bodyparser: getting requests in forms of json or url from users
   - helmet: security 
   - morgan: logging applications defined above
-- [Init.js: import from application](./init.js)
-- globalRouter.js: routing localhost:4000/{}
-- userRouter.js: routing localhost:4000/users/{}
-- videoRouter.js: routing localhost:4000/videos/{}
+- [Init.js: imports from application](./init.js)
 - routes.js: cramming all routes in one file
-- userController.js, videoController.js: functions that responds to requests
 
-## User CRUD Controller & Video CRUD Controller
+## Rendering templates with CRUD Controllers
 
-* Controller is basically javascript function that works underneath website
-* Making basic CRUD functions for user and video
+* Controller is javascript function that responds to requests.
+* A controller's job is to get the data and render the template(pug).
+
+```javascript
+res.render("templateName", {key:"value", stuff1, stuff2})
+```
+
+* We will make basic CRUD controllers for user and video
 
 ### [User CRUD Controller](./controllers/userController.js)
 
@@ -268,7 +271,7 @@ npm install body-parser
 * editVideo
 * deleteVideo
 
-## Connecting pug template to the controllers
+## Making pug template
 
 - [Pug is view engine for express, which makes HTML pretty. Thus, in the express js document, find set up for view engine.](https://expressjs.com/en/api.html#app.set)
 
@@ -359,35 +362,50 @@ const routes = {
   * Different data for same HTML structure
   * Just like mixins are used in styles.scss like function, so is mixins for pug
 
-## 
+## Connecting controllers with routers
+
+* A router is in charge of mapping URLS with Controller Functions
+
+### Routers
+
+* routes.js: making urls
+  * localhost:4000/{}
+  * localhost:4000/users/{}
+  * localhost:4000/videos/{}
+* globalRouter.js: routing localhost:4000/{} urls with both userController.js and videoController.jsp
+  * userController: join functions & login functions
+  * videoController: search function
+* userRouter.js: routing localhost:4000/users/{} urls with userController.js
+  * userController: userDetail, editProfile, changePassword functions
+* videoRouter.js: routing localhost:4000/videos/{} urls with videoController.js
+  * videoController: getUpload, afterUpload, videoDetail, editVideo,deleteVideo
+
+# 3. MongoDB
+
+* MongoDB is database
+  * [MongoDB Source for Installation](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
+  * [Installation Guide (Max OS)](https://zellwk.com/blog/install-mongodb/)
+* 
+
+# 4. Webpack
 
 
 
 
 
-# 3 MongoDB
+# 5. Styling
 
 
 
-# 4 Webpack
+# 6. User Authentication
 
 
 
-
-
-# 5 Styling
-
-
-
-# 6 User Authentication
+# 7. Relationships and Route
 
 
 
-# 7 Relationships and Route
-
-
-
-# 8 Custom Video Player
+# 8. Custom Video Player
 
 
 
