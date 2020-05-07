@@ -1,19 +1,29 @@
+/*controls video rendering*/
+
+// import urls routes
 import routes from "../routes";
 
-// controls video rendering
-// import data from sample database
-// import { videos } from "../sampledb";
+// import video objects from database
+import Video from "../models/Video";
 
-// exporting and sends function to globalRouter.js
 // function response for http://localhost:4000/home
-export const home = (req, res) =>
-  res.render("home", { pageTitle: "Home", videos }); // looking for template in the project named "home"
-// function response for http://localhost:4000/search
+export const home = async (req, res) => {
+  try {
+    // mongodb get all objects by find({})
+    const videos = await Video.find({});
+    // looking for template in the project named "home"
+    res.render("home", { pageTitle: "Home", videos });
+  } catch (error) {
+    console.log(error);
+    res.render("home", { pageTitle: "Home", videos: [] });
+  }
+};
+
+// function response for http://localhost:4000/search, returns query into json format
 export const search = (req, res) => {
-  // returns query into json format
   // console.log(req.query);
-  // searchingBy equals to req.query.term
   const {
+    // searchingBy equals to req.query.term
     query: { term: searchingBy },
   } = req;
   res.render("search", { pageTitle: "Search", searchingBy, videos });
@@ -23,7 +33,6 @@ export const search = (req, res) => {
 // function response for http://localhost:4000/videos/upload
 export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
-
 export const afterUpload = (req, res) => {
   const {
     body: { file, title, description },
