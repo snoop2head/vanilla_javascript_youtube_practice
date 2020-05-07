@@ -1,7 +1,12 @@
+// import mongoose ODM to connect mongodb
 import mongoose from "mongoose";
 
+// accessing environment variables stored in .env
+import dotenv from "dotenv";
+dotenv.config();
+
 // connecting mongodb using ODM: python ODM is pymongo, JS ODM is mongoose
-mongoose.connect("mongodb://localhost:27017/youtube-practice", {
+mongoose.connect(process.env.MONGO_URL, {
   // mongoose setup, subject to change according to mongoose versions
   useNewUrlParser: true,
   useFindAndModify: false,
