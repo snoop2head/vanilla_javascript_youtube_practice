@@ -4,12 +4,12 @@
 
 ## web app vs website
 
-- Website is not interact but just consuming content.
+- Website is not interactive but just displays content.
   - Instagram
 - Web app is click, search, send, upload... More user interaction. Tools like React / React Native is to make web more interactive. 
   - Netflix, YouTube 
 
-- However, this project will make YouTube more like website, not as interactive as it is.
+- This project will make YouTube-like website: CRUD website with vanilla javascript.
 
 # 1. Node Js
 
