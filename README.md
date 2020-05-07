@@ -388,11 +388,13 @@ fooRouter.get(URL, controller);
 
 # 3. MongoDB
 
-* MongoDB is database
-  * [MongoDB Source for Installation](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
+* MongoDB is database adequate for storing documents in json format
+  * [MongoDB file for local](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
   * [Installation Guide (Max OS)](https://zellwk.com/blog/install-mongodb/)
 * Mongoose is ODM, like pymongo
 * dotenv (.env) module can be used to hide sensitive information
+* Since Mongod is good for storing documents only, you don't put byte file (like videos)
+* schema is shape of data, which is written in models
 
 # 4. Webpack
 
