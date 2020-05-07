@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 const VideoSchema = new mongoose.Schema({
   fileUrl: {
     type: String,
-    requried: "File URL is required",
+    required: "File URL is required",
   },
   title: {
     type: String,
@@ -20,8 +20,10 @@ const VideoSchema = new mongoose.Schema({
     type: Date,
     default: Date.now, // Date.now() function
   },
+  //  getting comments model as an array
   comments: [
     {
+      // directing to comments as id, by referencing comment
       type: mongoose.Schema.Types.ObjectId,
       ref: "comment",
     },
