@@ -3,14 +3,18 @@
 // import urls routes
 import routes from "../routes";
 
-// import video objects from database
+// import models from database
 import Video from "../models/Video";
 
 // function response for http://localhost:4000/home
+// async function is waiting for the job to be done
 export const home = async (req, res) => {
+  // try the function or catch the error
   try {
     // mongodb get all objects by find({})
+    // awaiting for the job to be done
     const videos = await Video.find({});
+    // console.log(videos);
     // looking for template in the project named "home"
     res.render("home", { pageTitle: "Home", videos });
   } catch (error) {
@@ -33,11 +37,17 @@ export const search = (req, res) => {
 // function response for http://localhost:4000/videos/upload
 export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
-export const afterUpload = (req, res) => {
+export const afterUpload = async (req, res) => {
   const {
-    body: { file, title, description },
+    body: { title, description },
+    file: { path },
   } = req;
-  res.redirect(routes.videoDetail(121212));
+  const newVideo = await Video.create({
+    fileUrl: path,
+    title,
+    description,
+  });
+  res.redirect(routes.videoDetail(newVideo.id));
 };
 
 // function response for http://localhost:4000/videos/id/video-detail

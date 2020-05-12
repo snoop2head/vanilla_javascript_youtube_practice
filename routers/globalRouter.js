@@ -8,9 +8,10 @@ import { home, search } from "../controllers/videocontroller";
 // imported functions from usercontrollers
 import {
   getJoin,
-  afterJoin,
+  logout,
   getLogin,
-  afterLogin,
+  postLogin,
+  postJoin,
 } from "../controllers/usercontroller";
 
 // exporting globalRouter function inside of project folder
@@ -29,8 +30,10 @@ globalRouter.get(routes.search, search);
 // leads upto user controller
 // exported from videoController
 globalRouter.get(routes.join, getJoin);
-globalRouter.get(routes.join, afterJoin);
+globalRouter.get(routes.join, postJoin);
+
 globalRouter.get(routes.login, getLogin);
-globalRouter.post(routes.login, afterLogin);
+globalRouter.post(routes.login, postJoin);
+globalRouter.get(routes.logout, logout);
 
 export default globalRouter;

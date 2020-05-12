@@ -13,6 +13,8 @@ import {
 } from "../controllers/videoController";
 // exporting videoRouter function inside of project folder
 
+import { uploadVideo } from "../middlewares";
+
 // routing for /videos/{id} if there were to use id defined in routes.js
 // refer to routes.js where routes are defined
 const videoRouter = express.Router();
@@ -20,7 +22,7 @@ const videoRouter = express.Router();
 // CRUD: create(=upload), read(=read detail), update(=edit), delete
 // routing for ./upload
 videoRouter.get(routes.upload, getUpload);
-videoRouter.get(routes.upload, afterUpload);
+videoRouter.post(routes.upload, uploadVideo, afterUpload);
 // routing for ./video-detail
 videoRouter.get(routes.videoDetail(), videoDetail);
 // routing for ./edit-video

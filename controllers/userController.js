@@ -1,12 +1,11 @@
 import routes from "../routes";
 
-// join controller
-// functions that control rendering
+// controls join function: get request, post request
 // exporting user related function to globalRouter.js
 export const getJoin = (req, res) => {
   res.render("join", { pageTitle: "Join" });
 };
-export const afterJoin = (req, res) => {
+export const postJoin = (req, res) => {
   const {
     body: { name, email, password, confirmPassword },
   } = req;
@@ -21,7 +20,7 @@ export const afterJoin = (req, res) => {
 // login controller
 export const getLogin = (req, res) =>
   res.render("login", { pageTitle: "Log In" });
-export const afterLogin = (req, res) => {
+export const postLogin = (req, res) => {
   res.redirect(routes.home);
 };
 

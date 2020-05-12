@@ -10,6 +10,9 @@ import {
   userDetail,
   editProfile,
   changePassword,
+  getJoin,
+  postJoin,
+  postLogin,
 } from "../controllers/usercontroller";
 
 // routing for /users/{id} if there were to use id defined in routes.js
