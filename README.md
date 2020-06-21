@@ -265,7 +265,7 @@ res.render("templateName", {key:"value", stuff1, stuff2})
 * home
 * search
 * getUpload
-* afterUpload
+* postUpload
 * videoDetail
 * editVideo
 * deleteVideo
@@ -384,7 +384,7 @@ fooRouter.get(URL, controller);
 * userRouter.js: routing localhost:4000/users/{} urls with userController.js
   * userController: userDetail, editProfile, changePassword functions
 * videoRouter.js: routing localhost:4000/videos/{} urls with videoController.js
-  * videoController: getUpload, afterUpload, videoDetail, editVideo,deleteVideo
+  * videoController: getUpload, postUpload, videoDetail, editVideo,deleteVideo
 
 # 3. MongoDB
 
