@@ -6,24 +6,25 @@ import routes from "../routes";
 // import models from database
 import Video from "../models/Video";
 
-// function response for http://localhost:4000/home
-// async function is waiting for the job to be done
+// FUNCTION RESPONSE FOR http://localhost:4000/home
+// async function && await job
+// async && await will not move onto next line until a job is done
 export const home = async (req, res) => {
-  // try the function or catch the error
+  // try the function
   try {
-    // mongodb get all objects by find({})
     // awaiting for the job to be done
-    const videos = await Video.find({});
+    const videos = await Video.find({}); // mongodb get all objects by find({})
     // console.log(videos);
     // looking for template in the project named "home"
     res.render("home", { pageTitle: "Home", videos });
+    // catch the error, whereas throwing error is yielding ugly page
   } catch (error) {
     console.log(error);
     res.render("home", { pageTitle: "Home", videos: [] });
   }
 };
 
-// function response for http://localhost:4000/search, returns query into json format
+// FUNCTION RESPONSE FOR http://localhost:4000/search, returns query into json format
 export const search = (req, res) => {
   // console.log(req.query);
   const {
@@ -34,7 +35,7 @@ export const search = (req, res) => {
 };
 
 // exporting and renders function to videoRouter.js
-// function response for http://localhost:4000/videos/upload
+// FUNCTION RESPONSE FOR http://localhost:4000/videos/upload
 export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
 export const postUpload = async (req, res) => {
@@ -50,7 +51,7 @@ export const postUpload = async (req, res) => {
   res.redirect(routes.videoDetail(newVideo.id));
 };
 
-// function response for http://localhost:4000/videos/id/video-detail
+// FUNCTION RESPONSE FOR http://localhost:4000/videos/id/video-detail
 export const videoDetail = async (req, res) => {
   const {
     params: { id },
@@ -63,7 +64,7 @@ export const videoDetail = async (req, res) => {
   }
 };
 
-// function response for http://localhost:4000/videos/id/edit-video
+// FUNCTION RESPONSE FOR http://localhost:4000/videos/id/edit-video
 export const getEditVideo = async (req, res) => {
   const {
     params: { id },
@@ -89,6 +90,6 @@ export const postEditVideo = async (req, res) => {
   }
 };
 
-// function response for http://localhost:4000/videos/id/delete-video
+// FUNCTION RESPONSE FOR http://localhost:4000/videos/id/delete-video
 export const deleteVideo = (req, res) =>
   res.render("deleteVideo", { pageTitle: "Delete Video" });
