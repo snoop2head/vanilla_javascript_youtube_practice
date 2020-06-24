@@ -1,7 +1,9 @@
-// database modeling for videos
+// database modeling for Comments
+// https://mongoosejs.com/docs/guides.html
 import mongoose from "mongoose";
 
-// schema is shape of data
+// shaping the data(=making schema)
+// include text, creation date for comment schema
 const CommentSchema = new mongoose.Schema({
   text: {
     type: String,
@@ -13,7 +15,7 @@ const CommentSchema = new mongoose.Schema({
   },
 });
 
-// making model with commentschema written above
+// making model with comment schema written above
 const model = mongoose.model("Comment", CommentSchema);
 
 // exporting model
