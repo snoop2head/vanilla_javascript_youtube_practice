@@ -1,6 +1,6 @@
 # Vanilla Javascript to clone youtube
 
-
+[Lecture Source Code && Commit Log](https://github.com/nomadcoders/wetube)
 
 ## web app vs website
 
@@ -148,6 +148,13 @@ const handleProfile = (req, res) => res.send("You are on my profile");
 ```
 
 - create [.babelrc](/.babelrc) in the project folder
+
+  ```json
+  {
+    "presets": ["@babel/preset-env"]
+  }
+  ```
+
 - Save it on local by putting -D on the end.
 
 ```shell

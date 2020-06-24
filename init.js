@@ -8,7 +8,7 @@ dotenv.config();
 // importing database connector(mongoose as ODM)
 import "./db";
 
-// importign models: video and comment models
+// importing models: video and comment models
 import "./models/Video";
 import "./models/Comment";
 

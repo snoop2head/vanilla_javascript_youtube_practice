@@ -1,7 +1,9 @@
 // database modeling for videos
+// https://mongoosejs.com/docs/guides.html
 import mongoose from "mongoose";
 
-// schema is shape of data
+// shaping the data(=making schema)
+// fileUrl, title, views, created date, comments for video
 const VideoSchema = new mongoose.Schema({
   fileUrl: {
     type: String,
@@ -31,6 +33,7 @@ const VideoSchema = new mongoose.Schema({
 });
 
 // making model with videoschema written above
+// mongoose.model("NAME OF MODEL", DEFINED SCHEMA)
 const model = mongoose.model("Video", VideoSchema);
 
 // exporting model
