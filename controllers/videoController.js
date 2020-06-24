@@ -38,11 +38,14 @@ export const search = (req, res) => {
 // FUNCTION RESPONSE FOR http://localhost:4000/videos/upload
 export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
+
 export const postUpload = async (req, res) => {
+  // multer yields path <--- Need to figure out more
   const {
     body: { title, description },
     file: { path },
   } = req;
+  // creating new video
   const newVideo = await Video.create({
     fileUrl: path,
     title,

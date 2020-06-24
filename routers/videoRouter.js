@@ -22,8 +22,10 @@ import { uploadVideo } from "../middlewares";
 const videoRouter = express.Router();
 
 // CRUD: create(=upload), read(=read detail), update(=edit), delete
+
 // routing for ./upload
 videoRouter.get(routes.upload, getUpload);
+// uploadVideo using multer receive the url post it.
 videoRouter.post(routes.upload, uploadVideo, postUpload);
 // routing for ./video-detail
 videoRouter.get(routes.videoDetail(), videoDetail);

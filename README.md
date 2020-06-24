@@ -402,6 +402,7 @@ fooRouter.get(URL, controller);
 * dotenv (.env) module can be used to hide sensitive information
 * Since Mongod is good for storing documents only, you don't put byte file (like videos)
 * schema is shape of data, which is written in models/
+* Multer middleware yields url for uploaded files
 
 # 4. Webpack
 
